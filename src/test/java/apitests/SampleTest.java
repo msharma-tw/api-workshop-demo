@@ -11,16 +11,16 @@ public class SampleTest {
     @Test
     public void fetchProfileDetailsTest() {
 
-        Response response = given().when().get("https://api.github.com/users/rest-assured");
+        Response response = given().when().get("https://api.github.com/users/" + "octocat");
         assertEquals(response.statusCode(), 200);
-        assertEquals(response.jsonPath().getString("login"), "rest-assured");
+        assertEquals(response.jsonPath().getString("login"), "octocat");
     }
 
     @Test
     public void emailVisibilityTest() {
 
         //update your github personal access token here
-        String accessToken = "token " + "";
+        String accessToken = "token " + "ab023fd60234103c56367ab6036984dba6337a9d";
 
         JSONObject userObject = new JSONObject();
         userObject.put("email", "monika.sharma@thoughtworks.com");
