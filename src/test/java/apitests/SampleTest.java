@@ -22,7 +22,6 @@ public class SampleTest {
         //update your github personal access token here
         String githubToken = "personalaccesstoken";
         String emailId = "testuser@gmail.com";
-
         String accessToken = "token " + githubToken;
 
         JSONObject userObject = new JSONObject();
