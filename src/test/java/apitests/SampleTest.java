@@ -20,7 +20,8 @@ public class SampleTest {
     public void emailVisibilityTest() {
 
         //update your github personal access token here
-        String accessToken = "token " + "ab023fd60234103c56367ab6036984dba6337a9d";
+        String githubToken = "personalaccesstoken";
+        String accessToken = "token " + githubToken;
 
         JSONObject userObject = new JSONObject();
         userObject.put("email", "monika.sharma@thoughtworks.com");
