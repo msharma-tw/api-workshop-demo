@@ -1,0 +1,24 @@
+name: Java CI
+
+on:
+  repository_dispatch:
+    types: run-tests
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - pipeline-fixed
+
+jobs:
+  API-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Run tests
+        run: mvn clean "-DsuiteXmlFile=testng.xml" test
+      - name: Print Run id
+        run: echo $GITHUB_RUN_ID
